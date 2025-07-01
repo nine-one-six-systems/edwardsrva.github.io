@@ -22,9 +22,10 @@ A modern, responsive landing page for a marketing company built with HTML, CSS, 
 1. **Header**: Fixed navigation with smooth scrolling to sections
 2. **Hero**: Eye-catching headline with call-to-action button
 3. **Services**: Grid layout showcasing 6 key marketing services
-4. **About**: Company information with impressive statistics
-5. **Contact**: Contact form and company information
-6. **Footer**: Copyright information with links to legal pages
+4. **Who We Are**: Three-card layout explaining company identity, services, and value proposition
+5. **About**: Company information with impressive statistics
+6. **Contact**: Contact form and company information
+7. **Footer**: Copyright information with links to legal pages
 
 ## How to Use
 
