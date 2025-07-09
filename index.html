@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - GrowthEdge Coaching & Consulting</title>
+    <title>GrowthEdge Coaching & Consulting - Unlock Sustainable Growth</title>
     <style>
         * {
             margin: 0;
@@ -59,60 +59,269 @@
             opacity: 0.8;
         }
 
-        /* Main Content */
-        .main-content {
-            margin-top: 80px;
-            padding: 40px 2rem;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1A5F7A 0%, #2C3E50 100%);
+            color: white;
+            padding: 120px 2rem 80px;
+            text-align: center;
+        }
+
+        .hero-content {
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
-        .page-title {
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 2rem;
+            background: #F5F5F5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
             font-size: 2.5rem;
-            color: #1A5F7A;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .last-updated {
-            text-align: center;
-            color: #636E72;
             margin-bottom: 3rem;
-            font-style: italic;
+            color: #2C3E50;
         }
 
-        .section {
-            margin-bottom: 2rem;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
-        .section h2 {
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid #1A5F7A;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
             color: #1A5F7A;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #636E72;
+            line-height: 1.6;
+        }
+
+        /* Who We Are Section */
+        .who-we-are {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .who-we-are-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .who-we-are-card {
+            background: #F5F5F5;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .who-we-are-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 95, 122, 0.1);
+            border-color: #1A5F7A;
+        }
+
+        .who-we-are-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #1A5F7A;
+        }
+
+        .who-we-are-card h3 {
+            font-size: 1.5rem;
+            color: #2C3E50;
+            margin-bottom: 1rem;
+        }
+
+        .who-we-are-card p {
+            color: #636E72;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-we-are-card .highlight {
+            background: linear-gradient(135deg, #1A5F7A 0%, #2C3E50 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 2rem;
+            background: #2C3E50;
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #BDC3C7;
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+
+        .stat-label {
+            color: #BDC3C7;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 2rem;
+            background: #F5F5F5;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #1A5F7A;
-            padding-bottom: 0.5rem;
-        }
-
-        .section h3 {
             color: #2C3E50;
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.5rem 0;
         }
 
-        .section p {
+        .contact-info p {
             margin-bottom: 1rem;
-            color: #555;
+            color: #636E72;
         }
 
-        .section ul {
-            margin: 1rem 0;
-            padding-left: 2rem;
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .section li {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
             margin-bottom: 0.5rem;
-            color: #555;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1A5F7A;
+        }
+
+        .submit-btn {
+            background: #1A5F7A;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2C3E50;
         }
 
         /* Footer */
@@ -121,22 +330,31 @@
             color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 3rem;
         }
 
-        .back-link {
-            display: inline-block;
-            background: #1A5F7A;
-            color: white;
-            padding: 10px 20px;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #BDC3C7;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 2rem;
-            transition: background 0.3s;
+            margin: 0 1rem;
+            transition: color 0.3s;
         }
 
-        .back-link:hover {
-            background: #2C3E50;
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-copyright {
+            color: #95A5A6;
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
@@ -145,12 +363,26 @@
                 display: none;
             }
 
-            .page-title {
+            .hero h1 {
                 font-size: 2rem;
             }
 
-            .main-content {
-                padding: 20px 1rem;
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-we-are-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -161,100 +393,193 @@
         <nav>
             <div class="logo">GrowthEdge</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#who-we-are">Who We Work With</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#who-we-are">Who We Work With</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1 class="page-title">Terms of Service</h1>
-        <p class="last-updated">Last updated: December 2024</p>
-
-        <div class="section">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing and using the services provided by GrowthEdge Coaching & Consulting ("we," "us," or "our"), you accept and agree to be bound by the terms and provision of this agreement.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Unlock Sustainable Growth at the Edge of Your Comfort Zone</h1>
+            <p>We help founders and leadership teams build businesses that scale with clarity, confidence, and purpose. From strategic planning to executive coaching, we bring the tools, structure, and insight you need to grow—without burning out.</p>
+            <a href="#contact" class="cta-button">Let's Get Started</a>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>2. Services Description</h2>
-            <p>GrowthEdge Coaching & Consulting provides executive coaching, strategic consulting, and business development services including but not limited to:</p>
-            <ul>
-                <li>Executive Coaching and Leadership Development</li>
-                <li>Fractional COO Support and Operations Consulting</li>
-                <li>Strategic Planning and Facilitation</li>
-                <li>Culture and Team Development</li>
-                <li>Systems Thinking for Scale</li>
-                <li>EOS® Implementation and Business Process Optimization</li>
-            </ul>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Executive Coaching</h3>
+                    <p>Unlock your leadership potential with 1:1 or team coaching rooted in Positive Intelligence and StrengthsFinder. We help leaders thrive under pressure, make confident decisions, and inspire high-performing teams.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fractional COO Support</h3>
+                    <p>Bring structure and clarity to operations, leadership rhythms, and team performance. We implement systems and accountability frameworks so founders can focus on leading—not putting out fires.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Strategic Planning & Facilitation</h3>
+                    <p>From EOS implementation to leadership retreats, we create collaborative spaces for bold, aligned decision-making. Turn your vision into actionable quarterly priorities that drive results.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Culture & Team Development</h3>
+                    <p>Foster a people-first culture where strengths shine, communication flows, and teams self-manage with integrity and initiative. Build the high-trust environment that fuels sustainable growth.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Systems Thinking for Scale</h3>
+                    <p>Whether you're transitioning out of founder-led operations or preparing for growth investment, we install scalable systems that grow with you—not against you.</p>
+                </div>
+                <div class="service-card">
+                    <h3>EOS® Implementation</h3>
+                    <p>Certified support for implementing the Entrepreneurial Operating System, customized to meet the needs of founder-led and growth-stage teams. Get everyone rowing in the same direction.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>3. Client Responsibilities</h2>
-            <h3>3.1 Cooperation and Participation</h3>
-            <p>You agree to actively participate in coaching sessions, provide timely access to necessary information, and implement agreed-upon strategies and frameworks.</p>
-            
-            <h3>3.2 Confidentiality</h3>
-            <p>You agree to maintain the confidentiality of proprietary methodologies, frameworks, and insights shared during coaching and consulting sessions.</p>
+    <!-- Who We Are Section -->
+    <section id="who-we-are" class="who-we-are">
+        <div class="container">
+            <h2 class="section-title">Who We Work With</h2>
+            <div class="who-we-are-grid">
+                <div class="who-we-are-card">
+                    <div class="icon">👥</div>
+                    <h3>Ideal Client Profile</h3>
+                    <p>We specialize in working with founder-led startups ready to scale beyond the founder, growth-stage companies facing operational bottlenecks, and leadership teams navigating rapid hiring, fundraising, or reorganization.</p>
+                    <p>If you're building something that matters and need a partner who speaks the languages of marketing, operations, and people—we're here for you.</p>
+                    <div class="highlight">Visionary Leaders</div>
+                </div>
+                
+                <div class="who-we-are-card">
+                    <div class="icon">🎯</div>
+                    <h3>What We Deliver</h3>
+                    <p>We're Not Just Consultants—we're your thinking partner, execution strategist, and leadership coach rolled into one. Our hybrid model delivers measurable outcomes while keeping your people and purpose front and center.</p>
+                    <p>We combine proven frameworks like EOS, Positive Intelligence, and StrengthsFinder with real experience from startups to global brands.</p>
+                    <div class="highlight">Human-Centered</div>
+                </div>
+                
+                <div class="who-we-are-card">
+                    <div class="icon">⭐</div>
+                    <h3>Why Choose GrowthEdge?</h3>
+                    <p>Blending Expertise with Heart. We believe sustainable growth comes from empowered people. Our approach focuses on operational clarity, team alignment, and leader confidence.</p>
+                    <p>Our clients experience reduced founder dependency, increased team accountability, clear vision-to-execution alignment, and sustainable scaling without burnout.</p>
+                    <div class="highlight">Proven Results</div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>4. Payment Terms</h2>
-            <h3>4.1 Fees</h3>
-            <p>All fees are due as specified in your service agreement. Coaching and consulting packages are billed according to the agreed-upon schedule.</p>
-            
-            <h3>4.2 Refunds</h3>
-            <p>Refunds are provided according to our refund policy, which varies by service type and circumstances. Unused coaching sessions may be eligible for partial refunds.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Your Business Should Work for You—Not Because of You</h2>
+                    <p>At GrowthEdge, we empower founders and leadership teams to scale sustainably, align intentionally, and lead confidently. We combine over a decade of experience in marketing, operations, HR, and executive leadership to help business owners create organizations that thrive—not just survive.</p>
+                    <p>Whether serving clients through strategic consulting, leadership coaching, or facilitation, our goal remains the same: unlock transformational growth at the edge of comfort.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$50M+</div>
+                            <div class="stat-label">Revenue Generated</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="GrowthEdge Team" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>5. Intellectual Property</h2>
-            <p>We retain ownership of all proprietary coaching methodologies, frameworks, and materials created by us. You retain ownership of your business insights and implementation strategies.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Grow—Together</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to unlock your next stage of growth?</h3>
+                    <p>Book a free discovery call to explore how GrowthEdge can support your leadership journey and business scale. Whether you're facing growing pains, need better structure, or want to develop your team—we're here for it.</p>
+                    <p><strong>Email:</strong> hello@growthedgeconsulting.com</p>
+                    <p><strong>Phone:</strong> (555) 987-6543</p>
+                    <p><strong>Location:</strong> Richmond, VA (Serving clients remotely nationwide)</p>
+                    <p><strong>Hours:</strong> Monday – Friday | 9:00 AM – 5:00 PM EST</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your growth challenges..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Schedule Your Free Discovery Call</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="section">
-            <h2>6. Coaching and Consulting Relationship</h2>
-            <p>Our coaching and consulting relationship is built on trust, confidentiality, and mutual respect. We commit to providing professional, ethical guidance while you commit to active participation and implementation.</p>
-        </div>
-
-        <div class="section">
-            <h2>7. Limitation of Liability</h2>
-            <p>Our liability is limited to the amount paid for services in the 12 months preceding any claim. We are not liable for indirect, incidental, or consequential damages related to business decisions made based on our guidance.</p>
-        </div>
-
-        <div class="section">
-            <h2>8. Termination</h2>
-            <p>Either party may terminate this agreement with 30 days written notice. Upon termination, you remain responsible for payment of services rendered and any outstanding fees.</p>
-        </div>
-
-        <div class="section">
-            <h2>9. Governing Law</h2>
-            <p>This agreement is governed by the laws of the Commonwealth of Virginia, United States.</p>
-        </div>
-
-        <div class="section">
-            <h2>10. Changes to Terms</h2>
-            <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of updated terms.</p>
-        </div>
-
-        <div class="section">
-            <h2>Contact Information</h2>
-            <p>If you have questions about these Terms of Service, please contact us at:</p>
-            <p><strong>Email:</strong> legal@growthedgeconsulting.com<br>
-            <strong>Phone:</strong> (555) 987-6543<br>
-            <strong>Address:</strong> Richmond, VA (Serving clients remotely nationwide)</p>
-        </div>
-
-        <a href="index.html" class="back-link">← Back to Home</a>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 GrowthEdge Coaching & Consulting. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p class="footer-copyright">&copy; 2025 GrowthEdge Coaching & Consulting. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon to schedule your free discovery call.');
+            this.reset();
+        });
+    </script>
 </body>
 </html> 
