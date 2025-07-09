@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrowthEdge - Scale Your Business Without Losing Your Mind</title>
+    <meta name="description" content="GrowthEdge helps founders and leadership teams build scalable businesses with strategic planning, executive coaching, and operational excellence. Stop fighting fires, start building empires.">
+    <title>GrowthEdge - Stop Fighting Fires. Start Building Empires.</title>
     <style>
         * {
             margin: 0;
@@ -11,22 +12,60 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #0F172A;
+            --secondary: #3B82F6;
+            --accent: #F59E0B;
+            --success: #10B981;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #1A5F7A 0%, #2C3E50 100%);
-            color: white;
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         nav {
@@ -35,75 +74,238 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
         }
 
         .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🚀";
             font-size: 1.5rem;
-            font-weight: bold;
+            -webkit-text-fill-color: initial;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            opacity: 0.8;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--secondary);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1A5F7A 0%, #2C3E50 100%);
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
             color: white;
-            padding: 120px 2rem 80px;
-            text-align: center;
+            padding: 140px 2rem 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: float 20s infinite;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        .hero-text h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
+            line-height: 1.1;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: #CBD5E1;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #FF6B6B;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: var(--accent);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-secondary {
+            border: 2px solid white;
+            color: white;
+            padding: 13px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #94A3B8;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            animation: float 6s infinite;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .trust-bar h3 {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
         }
 
         /* Services Section */
         .services {
-            padding: 80px 2rem;
-            background: #F5F5F5;
+            padding: 100px 2rem;
+            background: white;
         }
 
         .container {
@@ -111,11 +313,32 @@
             margin: 0 auto;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2C3E50;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .services-grid {
@@ -125,90 +348,125 @@
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+            transform: translateX(-100%);
             transition: transform 0.3s;
-            border-left: 4px solid #1A5F7A;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: float 4s infinite;
         }
 
         .service-card h3 {
-            color: #1A5F7A;
+            color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .service-card p {
-            color: #636E72;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        /* Who We Are Section */
-        .who-we-are {
-            padding: 80px 2rem;
-            background: white;
+        .service-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
         }
 
-        .who-we-are-grid {
+        .service-link:hover {
+            gap: 1rem;
+        }
+
+        /* Who We Work With Section */
+        .who-we-work-with {
+            padding: 100px 2rem;
+            background: var(--bg-light);
+        }
+
+        .who-we-work-with-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
-        .who-we-are-card {
-            background: #F5F5F5;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
+        .who-we-work-with-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            transition: all 0.3s;
         }
 
-        .who-we-are-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(26, 95, 122, 0.1);
-            border-color: #1A5F7A;
+        .who-we-work-with-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .who-we-are-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #1A5F7A;
-        }
-
-        .who-we-are-card h3 {
-            font-size: 1.5rem;
-            color: #2C3E50;
+        .who-we-work-with-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        .who-we-are-card p {
-            color: #636E72;
-            line-height: 1.6;
+        .who-we-work-with-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
-        .who-we-are-card .highlight {
-            background: linear-gradient(135deg, #1A5F7A 0%, #2C3E50 100%);
+        .badge {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 600;
             display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* About Section */
         .about {
-            padding: 80px 2rem;
-            background: #2C3E50;
-            color: white;
+            padding: 100px 2rem;
+            background: white;
         }
 
         .about-content {
@@ -216,70 +474,104 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            color: white;
+            color: var(--primary);
+            font-weight: 800;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            color: #BDC3C7;
-            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
-        .stats {
+        .about-stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .stat {
+        .about-stat {
             text-align: center;
         }
 
-        .stat-number {
+        .about-stat-number {
             font-size: 2.5rem;
-            font-weight: bold;
-            color: #D4AF37;
+            font-weight: 800;
+            color: var(--accent);
         }
 
-        .stat-label {
-            color: #BDC3C7;
+        .about-stat-label {
+            color: var(--text-secondary);
             font-size: 0.9rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 2rem;
-            background: #F5F5F5;
+            padding: 100px 2rem;
+            background: var(--bg-light);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2C3E50;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
-        .contact-info p {
-            margin-bottom: 1rem;
-            color: #636E72;
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
         }
 
         .contact-form {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .form-group {
@@ -289,72 +581,116 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #2C3E50;
-            font-weight: bold;
+            color: var(--primary);
+            font-weight: 600;
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #E5E7EB;
-            border-radius: 5px;
+            padding: 12px 16px;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            background: var(--bg-light);
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: #1A5F7A;
+            border-color: var(--secondary);
+            background: white;
         }
 
         .submit-btn {
-            background: #1A5F7A;
+            background: var(--secondary);
             color: white;
-            padding: 12px 30px;
+            padding: 15px 40px;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
-            background: #2C3E50;
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
 
         /* Footer */
         footer {
-            background: #2C3E50;
+            background: var(--primary);
             color: white;
-            text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem 2rem;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .footer-links {
-            margin-bottom: 1rem;
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
         }
 
-        .footer-links a {
-            color: #BDC3C7;
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #CBD5E1;
             text-decoration: none;
-            margin: 0 1rem;
             transition: color 0.3s;
         }
 
-        .footer-links a:hover {
-            color: white;
+        .footer-section a:hover {
+            color: var(--accent);
         }
 
-        .footer-copyright {
-            color: #95A5A6;
-            font-size: 0.9rem;
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94A3B8;
         }
 
         /* Responsive Design */
@@ -363,26 +699,46 @@
                 display: none;
             }
 
-            .hero h1 {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
                 font-size: 2rem;
             }
 
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
+            .trust-logos {
                 gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .who-we-are-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -395,82 +751,120 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#who-we-are">Who We Help</a></li>
+                <li><a href="#who-we-work-with">Who We Work With</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Your Business Shouldn't Run You Into the Ground</h1>
-            <p>You built something amazing. Now it's killing you. We help exhausted founders create businesses that scale without the chaos, confusion, or 3am panic attacks.</p>
-            <a href="#contact" class="cta-button">Get Your Life Back →</a>
+        <div class="hero-content fade-in-up">
+            <div class="hero-text">
+                <h1>Unlock Sustainable Growth<br><span>for You and Your Business</span></h1>
+                <p>We help founders and leadership teams build businesses that scale with clarity, confidence, and purpose. From strategic planning to leadership coaching, we bring the tools, structure, and insight you need to grow, without burning out.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-primary">Let's Get Started</a>
+                    <a href="#services" class="cta-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7x</div>
+                        <div class="stat-label">Average ROI</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Growth Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <h3>Trusted by Growth-Stage Leaders</h3>
+        <div class="trust-logos">
+            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">TechCorp</span>
+            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">Innovate.io</span>
+            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">ScaleUp</span>
+            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">NextGen</span>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">How We Fix What's Broken</h2>
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive solutions to help you scale sustainably and lead with confidence.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Executive Coaching That Actually Works</h3>
-                    <p>Stop second-guessing every decision. Our 1:1 coaching uses neuroscience-backed methods to rewire your leadership brain. Make bold moves with clarity, not anxiety.</p>
+                    <div class="service-icon">🎯</div>
+                    <h3>Leadership Coaching</h3>
+                    <p><strong>Lead with clarity. Perform under pressure. Inspire lasting impact.</strong></p>
+                    <p>In high-stakes environments, leadership can feel isolating. Our 1:1 coaching equips you to lead with confidence, navigate complexity, and unlock your full potential. Grounded in Positive Intelligence, StrengthsFinder, and other proven frameworks, our coaching transforms barriers into breakthroughs, enabling you to harness your strengths and cultivate greater awareness.</p>
+                    <a href="#contact" class="service-link">Start Your Leadership Journey →</a>
                 </div>
                 <div class="service-card">
-                    <h3>Your Part-Time COO (Without the Full-Time Cost)</h3>
-                    <p>Still drowning in operations? We step in as your fractional COO to build the systems, processes, and accountability that let you focus on vision—not firefighting.</p>
+                    <div class="service-icon">⚙️</div>
+                    <h3>Strategic Foundation & Traction</h3>
+                    <p><strong>Align your team. Activate your vision.</strong></p>
+                    <p>We guide founders and their leadership teams through a structured strategic planning process rooted in EOS principles. It begins with a powerful 2-day offsite and continues with six months of guided execution. Build momentum with clear priorities, defined roles, and a rhythm of accountability to create a high-performing culture of trust that drives sustainable results.</p>
+                    <a href="#contact" class="service-link">Build Your Foundation →</a>
                 </div>
                 <div class="service-card">
-                    <h3>Strategic Planning That Sticks</h3>
-                    <p>Tired of "strategic plans" that collect dust? We facilitate sessions that turn big ideas into 90-day sprints. Your team leaves aligned, energized, and actually excited to execute.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Build a Team That Runs Without You</h3>
-                    <p>Create a culture where people solve problems instead of creating them. We develop self-managing teams that take ownership—so you can take vacation.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Systems That Scale (Not Break)</h3>
-                    <p>Your duct-tape solutions won't survive your next growth spurt. We build operational infrastructure that grows with you, not against you.</p>
-                </div>
-                <div class="service-card">
-                    <h3>EOS® Done Right</h3>
-                    <p>Already tried EOS and it didn't stick? We're certified implementers who customize the system for real businesses with real complexity. No cookie-cutter nonsense.</p>
+                    <div class="service-icon">👥</div>
+                    <h3>Strategic Planning Cohort</h3>
+                    <p><strong>Structure and strategy for solopreneurs with the power of peer connection.</strong></p>
+                    <p>Join a small, curated cohort of fellow solopreneurs for a 3-month journey through the same strategic planning models used in our full-team facilitation, plus 1:1 coaching tailored to your business. Gain clarity, accountability, and a supportive community as you turn vision into action and create space for growth.</p>
+                    <a href="#contact" class="service-link">Join the Cohort →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who We Are Section -->
-    <section id="who-we-are" class="who-we-are">
+    <!-- Who We Work With Section -->
+    <section id="who-we-work-with" class="who-we-work-with">
         <div class="container">
-            <h2 class="section-title">Is This You?</h2>
-            <div class="who-we-are-grid">
-                <div class="who-we-are-card">
-                    <div class="icon">😰</div>
-                    <h3>The Exhausted Founder</h3>
-                    <p>You're the bottleneck. Every decision, every problem, every fire lands on your desk. You started this business for freedom but now you're its prisoner.</p>
-                    <p><strong>Sound familiar? You're not alone. And more importantly—this isn't permanent.</strong></p>
-                    <div class="highlight">Time to Break Free</div>
+            <div class="section-header">
+                <div class="section-label">Our Approach</div>
+                <h2 class="section-title">Who We Work With</h2>
+                <p class="section-subtitle">We partner with visionary leaders ready to transform their businesses and themselves.</p>
+            </div>
+            <div class="who-we-work-with-grid">
+                <div class="who-we-work-with-card">
+                    <h3>Ready to Scale Beyond Just You?</h3>
+                    <p>We work with visionary leaders who've built something incredible but know it's time to evolve. Whether you're a founder ready to step back from day-to-day operations, a growth-stage company hitting operational walls, or a leadership team navigating the chaos of rapid scaling, we get it.</p>
+                    <p><strong>Don't stay stuck. We're here to help.</strong></p>
+                    <div class="badge">Visionary Leaders</div>
                 </div>
-                
-                <div class="who-we-are-card">
-                    <div class="icon">🚀</div>
-                    <h3>The Scaling Struggler</h3>
-                    <p>Revenue is growing but so is the chaos. Your team is confused, systems are breaking, and that "startup scrappiness" is now just dysfunction with a cute name.</p>
-                    <p>You need structure without bureaucracy. Processes without killing your culture. Growth without losing your mind.</p>
-                    <div class="highlight">Ready to Scale Smart</div>
+                <div class="who-we-work-with-card">
+                    <h3>We're Not Just Consultants—We're Your Growth Partners</h3>
+                    <p>Think of us as your thinking partner, execution strategist, and leadership coach rolled into one. Our hybrid approach delivers measurable outcomes while keeping your people and purpose at the heart of everything we do.</p>
+                    <p>We blend proven frameworks and models like EOS©, Positive Intelligence, and StrengthsFinder with real-world experience from startups to global brands. The result? Sustainable growth that doesn't sacrifice your soul.</p>
+                    <div class="badge">Human-Centered Approach</div>
                 </div>
-                
-                <div class="who-we-are-card">
-                    <div class="icon">💡</div>
-                    <h3>The Vision-Trapped Leader</h3>
-                    <p>You see where the company could go, but you're stuck in the weeds. Strategic thinking happens between emails. Big picture planning? That's a luxury you can't afford.</p>
-                    <p><strong>What if you could actually lead instead of just manage?</strong></p>
-                    <div class="highlight">Reclaim Your Vision</div>
+                <div class="who-we-work-with-card">
+                    <h3>Where Expertise Meets Heart</h3>
+                    <p>We believe the best growth happens when people feel empowered, aligned, and confident. Our approach transforms operational chaos into clarity, team confusion into alignment, and leadership doubt into unwavering confidence.</p>
+                    <p>Our clients don't just grow—they thrive. They experience reduced founder dependency, increased team accountability, crystal-clear vision-to-execution alignment, and sustainable scaling that doesn't lead to burnout.</p>
+                    <div class="badge">Proven Results</div>
                 </div>
             </div>
         </div>
@@ -478,55 +872,85 @@
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>We've Been Where You Are</h2>
-                    <p>We're not consultants who learned business from textbooks. We've built teams, scaled operations, and yes—made all the mistakes so you don't have to.</p>
-                    <p>From startups to Fortune 500s, we've seen what works and (more importantly) what doesn't. Now we help founders like you build businesses that run smoothly, scale sustainably, and let you sleep at night.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">87%</div>
-                            <div class="stat-label">Founder Time Freed Up</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">3.2x</div>
-                            <div class="stat-label">Average Revenue Growth</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">6 months</div>
-                            <div class="stat-label">To Operational Freedom</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Zero</div>
-                            <div class="stat-label">Founders Who Regret It</div>
-                        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Run Your Business.<br>Don't Let It Run You.</h2>
+                <p>At GrowthEdge, we empower founders and leadership teams to scale sustainably, align their strategies intentionally, and lead with confidence. We combine over a decade of experience in marketing, operations, HR, and executive leadership to help business owners create organizations that thrive, not just survive.</p>
+                <p>Whether serving clients through strategic consulting, leadership coaching, or facilitation, our goal remains the same: to unlock transformational growth in you, your teams, and your business.</p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="about-stat-number">10+</div>
+                        <div class="about-stat-label">Years Experience</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-number">7x</div>
+                        <div class="about-stat-label">Average ROI on Coaching</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-number">100%</div>
+                        <div class="about-stat-label">Happy Clients</div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="GrowthEdge Team" style="width: 100%; border-radius: 10px;">
-                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="GrowthEdge Team">
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Ready to Stop Playing Hero?</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's have an honest conversation</h3>
-                    <p>No pitch. No PowerPoint. Just a real discussion about where you're stuck and whether we can help. If we're not the right fit, we'll tell you (and probably know someone who is).</p>
-                    <p><strong>Email:</strong> hello@growthedgeconsulting.com</p>
-                    <p><strong>Phone:</strong> (555) 987-6543</p>
-                    <p><strong>Location:</strong> Richmond, VA (Working with founders nationwide)</p>
-                    <p><strong>Availability:</strong> Most founders call us either very early or very late. We get it.</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Let's Grow Together</h3>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;"><strong>Ready to turn roadblocks into results?</strong></p>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Let's have a real conversation about what's getting in your way and what it'll take to move forward. Whether it's clarity, strategic structure, or scaling with less stress, we'll explore if GrowthEdge is the right fit. No pressure, no fluff - just the potential to unlock sustainable success.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <div>hello@yourgrowthedge.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>Based in Richmond, VA.<br>Working with founders nationwide.</div>
+                    </div>
+                    <div class="contact-item">
+                        <span>⏰</span>
+                        <div>We're here when you need us.</div>
+                    </div>
                 </div>
-                <div class="contact-form">
-                    <div id="_sm_webform_"></div>
-                    <script>! function(e, t, a, i, d, n, o) {var WEBFORM_DATA = {formId: '8facd188-d717-4025-af74-2e4d7f1de9ae', divId: '_sm_webform_', linkName: 'nineonesix.salesmate.io' }; WEBFORM_DATA.loadElement = t.currentScript; e[i] = e[i] || function () {(e[i].q = e[i].q || []).push(arguments)}, n = t.createElement(a), n.onload = function () { if (!WEBFORM_DATA.divId || !t.getElementById(WEBFORM_DATA.divId)) { ld = t.createElement('div'); ld.id = WEBFORM_DATA.formId + __salesmate_webform_iframes__.length; WEBFORM_DATA.loadElement.parentNode.insertBefore(ld, WEBFORM_DATA.loadElement); WEBFORM_DATA.divId = ld.id} SmFormSettings.loadForm(WEBFORM_DATA);}, o = t.getElementsByTagName(a)[0], n.id = i, n.src = d, n.async = 1, o.parentNode.insertBefore(n, o) }(window, document, "script", "loadFormScript", "https://nineonesix.salesmate.io/webforms.js");</script>
+
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                    <a href="#" aria-label="Facebook">f</a>
                 </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">What's keeping you up at night?</label>
+                        <textarea id="message" name="message" rows="4" placeholder="No filter needed."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Let's do this.</button>
+                </form>
             </div>
         </div>
     </section>
@@ -534,16 +958,44 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="terms.html">Terms</a>
-                <a href="privacy.html">Privacy</a>
+            <div class="footer-section">
+                <h4>GrowthEdge</h4>
+                <p style="color: #CBD5E1; line-height: 1.8;">Helping founders build businesses that scale with clarity, confidence, and purpose.</p>
             </div>
-            <p class="footer-copyright">&copy; 2025 GrowthEdge Coaching & Consulting. Helping founders build businesses that don't require martyrdom.</p>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#who-we-work-with">Who We Work With</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Growth Readiness Quiz</a></li>
+                    <li><a href="#">EOS Toolkit</a></li>
+                    <li><a href="#">Leadership Resources</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrowthEdge Coaching & Consulting. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -555,6 +1007,56 @@
                     });
                 }
             });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Animation for button
+            const button = this.querySelector('.submit-btn');
+            button.textContent = 'Sending...';
+            button.style.background = 'var(--success)';
+            
+            setTimeout(() => {
+                alert('Thank you for your message! We\'ll get back to you soon to schedule your free discovery call.');
+                this.reset();
+                button.textContent = 'Let\'s do this.';
+                button.style.background = 'var(--secondary)';
+            }, 1500);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.service-card, .who-we-work-with-card, .about-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
         });
     </script>
 </body>
