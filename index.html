@@ -524,25 +524,8 @@
                     <p><strong>Availability:</strong> Most founders call us either very early or very late. We get it.</p>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email (The one you actually check)</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">What's keeping you up at night?</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Be honest. We've heard it all..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Let's Fix This Together</button>
-                    </form>
+                    <div id="_sm_webform_"></div>
+                    <script>! function(e, t, a, i, d, n, o) {var WEBFORM_DATA = {formId: '8facd188-d717-4025-af74-2e4d7f1de9ae', divId: '_sm_webform_', linkName: 'nineonesix.salesmate.io' }; WEBFORM_DATA.loadElement = t.currentScript; e[i] = e[i] || function () {(e[i].q = e[i].q || []).push(arguments)}, n = t.createElement(a), n.onload = function () { if (!WEBFORM_DATA.divId || !t.getElementById(WEBFORM_DATA.divId)) { ld = t.createElement('div'); ld.id = WEBFORM_DATA.formId + __salesmate_webform_iframes__.length; WEBFORM_DATA.loadElement.parentNode.insertBefore(ld, WEBFORM_DATA.loadElement); WEBFORM_DATA.divId = ld.id} SmFormSettings.loadForm(WEBFORM_DATA);}, o = t.getElementsByTagName(a)[0], n.id = i, n.src = d, n.async = 1, o.parentNode.insertBefore(n, o) }(window, document, "script", "loadFormScript", "https://nineonesix.salesmate.io/webforms.js");</script>
                 </div>
             </div>
         </div>
@@ -572,13 +555,6 @@
                     });
                 }
             });
-        });
-
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thanks for reaching out! We\'ll be in touch within 24 hours to schedule a conversation. (And yes, we actually will.)');
-            this.reset();
         });
     </script>
 </body>
