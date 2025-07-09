@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Marketing Solutions - Drive Your Business Growth</title>
+    <title>GrowthEdge Coaching & Consulting - Unlock Sustainable Growth</title>
     <style>
         * {
             margin: 0;
@@ -14,12 +14,12 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1a1a1a;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -61,7 +61,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
             color: white;
             padding: 120px 2rem 80px;
             text-align: center;
@@ -86,7 +86,7 @@
 
         .cta-button {
             display: inline-block;
-            background: #ff6b6b;
+            background: #FF6B35;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
@@ -97,13 +97,13 @@
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
         }
 
         /* Services Section */
         .services {
             padding: 80px 2rem;
-            background: #f8f9fa;
+            background: #F5F5F5;
         }
 
         .container {
@@ -115,12 +115,12 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #333;
+            color: #1a1a1a;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
@@ -130,6 +130,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            border-left: 4px solid #2E7D32;
         }
 
         .service-card:hover {
@@ -137,20 +138,77 @@
         }
 
         .service-card h3 {
-            color: #667eea;
+            color: #2E7D32;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .service-card p {
-            color: #666;
+            color: #666666;
             line-height: 1.6;
+        }
+
+        /* Who We Are Section */
+        .who-we-are {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .who-we-are-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .who-we-are-card {
+            background: #F5F5F5;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .who-we-are-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.1);
+            border-color: #2E7D32;
+        }
+
+        .who-we-are-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #2E7D32;
+        }
+
+        .who-we-are-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .who-we-are-card p {
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-we-are-card .highlight {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
         }
 
         /* About Section */
         .about {
             padding: 80px 2rem;
-            background: white;
+            background: #1E3A5F;
+            color: white;
         }
 
         .about-content {
@@ -163,12 +221,12 @@
         .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            color: #333;
+            color: white;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            color: #666;
+            color: #ccc;
             margin-bottom: 1rem;
         }
 
@@ -186,18 +244,18 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: #4CAF50;
         }
 
         .stat-label {
-            color: #666;
+            color: #ccc;
             font-size: 0.9rem;
         }
 
         /* Contact Section */
         .contact {
             padding: 80px 2rem;
-            background: #f8f9fa;
+            background: #F5F5F5;
         }
 
         .contact-content {
@@ -209,12 +267,12 @@
         .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #1a1a1a;
         }
 
         .contact-info p {
             margin-bottom: 1rem;
-            color: #666;
+            color: #666666;
         }
 
         .contact-form {
@@ -231,7 +289,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: #1a1a1a;
             font-weight: bold;
         }
 
@@ -248,11 +306,11 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #2E7D32;
         }
 
         .submit-btn {
-            background: #667eea;
+            background: #2E7D32;
             color: white;
             padding: 12px 30px;
             border: none;
@@ -263,68 +321,12 @@
         }
 
         .submit-btn:hover {
-            background: #5a6fd8;
-        }
-
-        /* Who We Are Section */
-        .who-we-are {
-            padding: 80px 2rem;
-            background: white;
-        }
-
-        .who-we-are-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .who-we-are-card {
-            background: #f8f9fa;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .who-we-are-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.1);
-            border-color: #667eea;
-        }
-
-        .who-we-are-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #667eea;
-        }
-
-        .who-we-are-card h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .who-we-are-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .who-we-are-card .highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
+            background: #1B5E20;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #1a1a1a;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -389,11 +391,11 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Strategic Marketing</div>
+            <div class="logo">GrowthEdge</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#who-we-are">Who We Are</a></li>
+                <li><a href="#who-we-are">Who We Work With</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -403,9 +405,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Transform Your Business with Strategic Marketing</h1>
-            <p>We help businesses grow through innovative digital marketing strategies, data-driven insights, and creative campaigns that deliver measurable results.</p>
-            <a href="#contact" class="cta-button">Get Started Today</a>
+            <h1>Unlock Sustainable Growth at the Edge of Your Comfort Zone</h1>
+            <p>We help founders and leadership teams build businesses that scale with clarity, confidence, and purpose. From strategic planning to executive coaching, we bring the tools, structure, and insight you need to grow—without burning out.</p>
+            <a href="#contact" class="cta-button">Let's Get Started</a>
         </div>
     </section>
 
@@ -415,28 +417,28 @@
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Digital Marketing</h3>
-                    <p>Comprehensive digital marketing strategies including SEO, PPC, social media, and content marketing to boost your online presence and drive conversions.</p>
+                    <h3>Executive Coaching</h3>
+                    <p>Unlock your leadership potential with 1:1 or team coaching rooted in Positive Intelligence and StrengthsFinder. We help leaders thrive under pressure, make confident decisions, and inspire high-performing teams.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Brand Strategy</h3>
-                    <p>Develop a compelling brand identity that resonates with your target audience and sets you apart from the competition in today's crowded marketplace.</p>
+                    <h3>Fractional COO Support</h3>
+                    <p>Bring structure and clarity to operations, leadership rhythms, and team performance. We implement systems and accountability frameworks so founders can focus on leading—not putting out fires.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Analytics & Insights</h3>
-                    <p>Data-driven marketing decisions with comprehensive analytics, performance tracking, and actionable insights to optimize your marketing ROI.</p>
+                    <h3>Strategic Planning & Facilitation</h3>
+                    <p>From EOS implementation to leadership retreats, we create collaborative spaces for bold, aligned decision-making. Turn your vision into actionable quarterly priorities that drive results.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Content Creation</h3>
-                    <p>Engaging, high-quality content that tells your story, educates your audience, and drives engagement across all digital platforms.</p>
+                    <h3>Culture & Team Development</h3>
+                    <p>Foster a people-first culture where strengths shine, communication flows, and teams self-manage with integrity and initiative. Build the high-trust environment that fuels sustainable growth.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Social Media Management</h3>
-                    <p>Strategic social media presence management with consistent posting, community engagement, and platform-specific optimization.</p>
+                    <h3>Systems Thinking for Scale</h3>
+                    <p>Whether you're transitioning out of founder-led operations or preparing for growth investment, we install scalable systems that grow with you—not against you.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Marketing Automation</h3>
-                    <p>Streamline your marketing processes with automated workflows, email campaigns, and lead nurturing systems that scale with your business.</p>
+                    <h3>EOS® Implementation</h3>
+                    <p>Certified support for implementing the Entrepreneurial Operating System, customized to meet the needs of founder-led and growth-stage teams. Get everyone rowing in the same direction.</p>
                 </div>
             </div>
         </div>
@@ -445,29 +447,29 @@
     <!-- Who We Are Section -->
     <section id="who-we-are" class="who-we-are">
         <div class="container">
-            <h2 class="section-title">Who We Are, What We Do & Why Us</h2>
+            <h2 class="section-title">Who We Work With</h2>
             <div class="who-we-are-grid">
                 <div class="who-we-are-card">
                     <div class="icon">👥</div>
-                    <h3>Who We Are</h3>
-                    <p>We are a team of passionate marketing professionals with over a decade of experience in digital marketing. Our diverse team includes certified experts in SEO, PPC, social media, content creation, and marketing analytics.</p>
-                    <p>Founded in 2014, we've grown from a small startup to a trusted partner for hundreds of businesses across various industries. Our mission is to help businesses achieve sustainable growth through strategic, data-driven marketing.</p>
-                    <div class="highlight">Certified Experts</div>
+                    <h3>Ideal Client Profile</h3>
+                    <p>We specialize in working with founder-led startups ready to scale beyond the founder, growth-stage companies facing operational bottlenecks, and leadership teams navigating rapid hiring, fundraising, or reorganization.</p>
+                    <p>If you're building something that matters and need a partner who speaks the languages of marketing, operations, and people—we're here for you.</p>
+                    <div class="highlight">Visionary Leaders</div>
                 </div>
                 
                 <div class="who-we-are-card">
                     <div class="icon">🎯</div>
-                    <h3>What We Do</h3>
-                    <p>We create comprehensive marketing strategies that drive real business results. From initial brand development to ongoing campaign management, we handle every aspect of your digital marketing needs.</p>
-                    <p>Our approach combines creative storytelling with advanced analytics to ensure every marketing dollar is spent effectively. We specialize in lead generation, brand awareness, and conversion optimization across all digital channels.</p>
-                    <div class="highlight">Results-Driven</div>
+                    <h3>What We Deliver</h3>
+                    <p>We're Not Just Consultants—we're your thinking partner, execution strategist, and leadership coach rolled into one. Our hybrid model delivers measurable outcomes while keeping your people and purpose front and center.</p>
+                    <p>We combine proven frameworks like EOS, Positive Intelligence, and StrengthsFinder with real experience from startups to global brands.</p>
+                    <div class="highlight">Human-Centered</div>
                 </div>
                 
                 <div class="who-we-are-card">
                     <div class="icon">⭐</div>
-                    <h3>Why Choose Us</h3>
-                    <p>Unlike traditional agencies, we focus on building long-term partnerships with our clients. We don't just execute campaigns – we become an extension of your team, understanding your business goals and adapting strategies accordingly.</p>
-                    <p>Our proven track record includes helping clients achieve 300%+ increases in organic traffic, 150%+ improvements in conversion rates, and generating millions in additional revenue through strategic marketing initiatives.</p>
+                    <h3>Why Choose GrowthEdge?</h3>
+                    <p>Blending Expertise with Heart. We believe sustainable growth comes from empowered people. Our approach focuses on operational clarity, team alignment, and leader confidence.</p>
+                    <p>Our clients experience reduced founder dependency, increased team accountability, clear vision-to-execution alignment, and sustainable scaling without burnout.</p>
                     <div class="highlight">Proven Results</div>
                 </div>
             </div>
@@ -479,10 +481,14 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Why Choose Strategic Marketing?</h2>
-                    <p>With over 10 years of experience in the marketing industry, we've helped hundreds of businesses achieve their growth goals through innovative marketing strategies.</p>
-                    <p>Our team of certified marketing professionals combines creativity with data-driven insights to deliver campaigns that not only look great but also drive real business results.</p>
+                    <h2>Your Business Should Work for You—Not Because of You</h2>
+                    <p>At GrowthEdge, we empower founders and leadership teams to scale sustainably, align intentionally, and lead confidently. We combine over a decade of experience in marketing, operations, HR, and executive leadership to help business owners create organizations that thrive—not just survive.</p>
+                    <p>Whether serving clients through strategic consulting, leadership coaching, or facilitation, our goal remains the same: unlock transformational growth at the edge of comfort.</p>
                     <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
                         <div class="stat">
                             <div class="stat-number">500+</div>
                             <div class="stat-label">Happy Clients</div>
@@ -492,17 +498,13 @@
                             <div class="stat-label">Success Rate</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
                             <div class="stat-number">$50M+</div>
                             <div class="stat-label">Revenue Generated</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Marketing Team" style="width: 100%; border-radius: 10px;">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="GrowthEdge Team" style="width: 100%; border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -511,15 +513,15 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Let's Grow—Together</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Ready to Grow Your Business?</h3>
-                    <p>Let's discuss how our marketing strategies can help you achieve your business goals. We offer free consultations to understand your needs and provide tailored solutions.</p>
-                    <p><strong>Email:</strong> hello@strategicmarketing.com</p>
-                    <p><strong>Phone:</strong> (555) 123-4567</p>
-                    <p><strong>Address:</strong> 123 Marketing Ave, Business District, NY 10001</p>
-                    <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM EST</p>
+                    <h3>Ready to unlock your next stage of growth?</h3>
+                    <p>Book a free discovery call to explore how GrowthEdge can support your leadership journey and business scale. Whether you're facing growing pains, need better structure, or want to develop your team—we're here for it.</p>
+                    <p><strong>Email:</strong> hello@growthedgeconsulting.com</p>
+                    <p><strong>Phone:</strong> (555) 987-6543</p>
+                    <p><strong>Location:</strong> Richmond, VA (Serving clients remotely nationwide)</p>
+                    <p><strong>Hours:</strong> Monday – Friday | 9:00 AM – 5:00 PM EST</p>
                 </div>
                 <div class="contact-form">
                     <form>
@@ -537,9 +539,9 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your marketing needs..."></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your growth challenges..."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn">Schedule Your Free Discovery Call</button>
                     </form>
                 </div>
             </div>
@@ -553,7 +555,7 @@
                 <a href="terms.html">Terms of Service</a>
                 <a href="privacy.html">Privacy Policy</a>
             </div>
-            <p class="footer-copyright">&copy; 2024 Strategic Marketing Solutions. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2025 GrowthEdge Coaching & Consulting. All rights reserved.</p>
         </div>
     </footer>
 
@@ -575,7 +577,7 @@
         // Form submission handling
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you soon.');
+            alert('Thank you for your message! We\'ll get back to you soon to schedule your free discovery call.');
             this.reset();
         });
     </script>
