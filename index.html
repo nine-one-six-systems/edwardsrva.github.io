@@ -89,9 +89,15 @@
         }
 
         .logo::before {
-            content: "🚀";
-            font-size: 1.5rem;
-            -webkit-text-fill-color: initial;
+            content: "";
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233B82F6'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5zM12 22c-4.75-1.1-8-4.86-8-9V8.5l8-4.5 8 4.5V13c0 4.14-3.25 7.9-8 9z'/%3E%3Cpath d='M12 6l-6 3.5v5c0 3.31 2.69 6 6 6s6-2.69 6-6v-5L12 6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            margin-right: 0.5rem;
         }
 
         .nav-links {
@@ -278,29 +284,7 @@
             animation: float 6s infinite;
         }
 
-        /* Trust Bar */
-        .trust-bar {
-            background: var(--bg-light);
-            padding: 3rem 2rem;
-            text-align: center;
-        }
 
-        .trust-bar h3 {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-            opacity: 0.6;
-        }
 
         /* Services Section */
         .services {
@@ -378,7 +362,8 @@
         }
 
         .service-icon {
-            font-size: 3rem;
+            width: 3rem;
+            height: 3rem;
             margin-bottom: 1.5rem;
             display: inline-block;
             animation: float 4s infinite;
@@ -564,7 +549,9 @@
         }
 
         .contact-item span {
-            font-size: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: inline-block;
         }
 
         .contact-form {
@@ -794,16 +781,7 @@
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <h3>Trusted by Growth-Stage Leaders</h3>
-        <div class="trust-logos">
-            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">TechCorp</span>
-            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">Innovate.io</span>
-            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">ScaleUp</span>
-            <span style="font-size: 2rem; font-weight: 600; color: #64748B;">NextGen</span>
-        </div>
-    </section>
+
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -815,21 +793,33 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎯</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
                     <h3>Leadership Coaching</h3>
                     <p><strong>Lead with clarity. Perform under pressure. Inspire lasting impact.</strong></p>
                     <p>In high-stakes environments, leadership can feel isolating. Our 1:1 coaching equips you to lead with confidence, navigate complexity, and unlock your full potential. Grounded in Positive Intelligence, StrengthsFinder, and other proven frameworks, our coaching transforms barriers into breakthroughs, enabling you to harness your strengths and cultivate greater awareness.</p>
                     <a href="#contact" class="service-link">Start Your Leadership Journey →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">⚙️</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
                     <h3>Strategic Foundation & Traction</h3>
                     <p><strong>Align your team. Activate your vision.</strong></p>
                     <p>We guide founders and their leadership teams through a structured strategic planning process rooted in EOS principles. It begins with a powerful 2-day offsite and continues with six months of guided execution. Build momentum with clear priorities, defined roles, and a rhythm of accountability to create a high-performing culture of trust that drives sustainable results.</p>
                     <a href="#contact" class="service-link">Build Your Foundation →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">👥</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01 1l-3.7 4.99c-.56.75-.56 1.74 0 2.49l3.7 4.99c.47.63 1.21 1 2.01 1h1.54c.8 0 1.54-.37 2.01-1L22.5 22H20v6h-2z"/>
+                        </svg>
+                    </div>
                     <h3>Strategic Planning Cohort</h3>
                     <p><strong>Structure and strategy for solopreneurs with the power of peer connection.</strong></p>
                     <p>Join a small, curated cohort of fellow solopreneurs for a 3-month journey through the same strategic planning models used in our full-team facilitation, plus 1:1 coaching tailored to your business. Gain clarity, accountability, and a supportive community as you turn vision into action and create space for growth.</p>
@@ -908,15 +898,27 @@
                 
                 <div class="contact-details">
                     <div class="contact-item">
-                        <span>📧</span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </span>
                         <div>hello@yourgrowthedge.com</div>
                     </div>
                     <div class="contact-item">
-                        <span>📍</span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </span>
                         <div>Based in Richmond, VA.<br>Working with founders nationwide.</div>
                     </div>
                     <div class="contact-item">
-                        <span>⏰</span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </span>
                         <div>We're here when you need us.</div>
                     </div>
                 </div>
